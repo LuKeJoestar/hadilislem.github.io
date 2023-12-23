@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OUR LUV STORY</title>
+    <link href="css/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="script/jquery.js"></script>
+    <script type="text/javascript" src="script/garden.js"></script>
+    <script type="text/javascript" src="script/function.js"></script>
+</head>
+<body>
+    <div id="mainDiv">
+        <div id="content">
+            <div id="code" style="margin-top: 112.5px;">
+                <span class="comments">/**</span><br>
+                <span class="space"><span class="comments">*Start date for two people: sep 25, 2023,</span><br>
+                <span class="space"><span class="comments">*ISLEM.</span><br>
+                <span class="space"><span class="comments">*HADIL.</span><br>
+                <span class="space"><span class="comments">*/</span><br>
+                Boy name = <span class="keyword">Mr</span>ISLEM<br>
+                Girl name = <span class="keyword">Mrs</span> HADIL<br>
+                <span class="comments">// Fall in love together. </span><br>
+                The boy love the girl;<br>
+                <span class="comments">// They love each other.</span><br>
+                The girl loved the boy;<br>
+                <span class="comments">// time flies.</span><br>
+                The boy can not be separated from the girl;<br>
+                <span class="comments">// Both sides will never leave each other.</span><br>
+                The girl can not be separated from the boy;<br>
+                <span class="comments">// The two have a deep affection for each other.</span><br>
+                <span class="comments">// Every day you and I are as sweet as honey.</span><br>
+                <span class="keyword">The boy</span> very <span class="keyword">happy</span>;<br>
+                <span class="keyword">The girl</span> is also very <span class="keyword">happy</span>;<br>
+                <span class="placeholder"><span class="comments">// no matter now</span><br>
+                <span class="placeholder"><span class="comments">// Still in the distant future.</span><br>
+                <span class="placeholder">The boy has but one dream;<br>
+                <span class="comments">// The boy hopes that his girl can be happy forever.</span><br>
+                <br>
+                <br>
+                I want to say:<br>
+                Baby, I love you forever;<br>
+            </span></span></span></span></span></span></div>
+            <div id="loveHeart">
+                <canvas id="garden" width="670" height="625"></canvas>
+                <div id="words">
+                    <div id="messages">
+                        Honey, this is the time we spend together in love.
+                        <div id="elapseClock"><span class="digit">91</span> day <span class="digit">14</span> Hour <span class="digit">14</span> minute <span class="digit">14</span>Second</div>
+                    </div>
+                    <div id="loveu">
+                        love you forever.<br>
+                        Im Proud of you <br>
+                        <div class="signature">- Dumb</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var offsetX = $("#loveHeart").width() / 2;
+            var offsetY = $("#loveHeart").height() / 2 - 55;
+            var together = new Date();
+            together.setFullYear(2019, 6, 14);
+            together.setHours(20);
+            together.setMinutes(0);
+            together.setSeconds(0);
+            together.setMilliseconds(0);
+
+            if (!document.createElement('canvas').getContext) {
+                var msg = document.createElement("div");
+                msg.id = "errorMsg";
+                msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+                document.body.appendChild(msg);
+                $("#code").css("display", "none")
+                document.execCommand("stop");
+            } else {
+                setTimeout(function () {
+                    startHeartAnimation();
+                }, 5000);
+
+                timeElapse(together);
+                setInterval(function () {
+                    timeElapse(together);
+                }, 500);
+
+                adjustCodePosition();
+                $("#code").typewriter();
+            }
+        </script>
+    </div>
+</body>
+</html>
