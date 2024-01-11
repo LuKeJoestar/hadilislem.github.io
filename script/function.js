@@ -1,11 +1,9 @@
-
 var $window = $(window), gardenCtx, gardenCanvas, $garden, garden;
 var clientWidth = $(window).width();
 var clientHeight = $(window).height();
 
 $(function () {
     // setup garden
-	
 	$loveHeart = $("#loveHeart");
 	var offsetX = $loveHeart.width() / 2;
 	var offsetY = $loveHeart.height() / 2 - 55;
@@ -21,21 +19,9 @@ $(function () {
 	$("#content").css("height", Math.max($loveHeart.height(), $("#code").height()));
 	$("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2, 10));
 	$("#content").css("margin-left", Math.max(($window.width() - $("#content").width()) / 2, 10));
-	// Load the previous count from local storage
-    var count = parseInt(localStorage.getItem('daysCounter')) || 0;
-
-    // Display the initial count
-    $("#elapseClock").html(getElapsedTime(count));
-
 
     // renderLoop
     setInterval(function () {
-	    // Increment the count and update the display
-        count++;
-        $("#elapseClock").html(getElapsedTime(count));
-
-        // Save the updated count to local storage
-        localStorage.setItem('daysCounter', count);
         garden.render();
     }, Garden.options.growSpeed);
 });
@@ -108,7 +94,7 @@ function startHeartAnimation() {
 function timeElapse(date) {
     var current = Date();
     var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
-    var days = 96; // Set the desired number of days
+    var days = 91; // Set the desired number of days
     var hours = Math.floor(seconds / 3600) % 24;
     if (hours < 10) {
         hours = "0" + hours;
